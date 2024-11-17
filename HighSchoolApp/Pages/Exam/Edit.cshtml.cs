@@ -5,6 +5,7 @@ namespace HighSchoolApp.Pages.Exam
 {
     public class EditModel : PageModel
     {
+
         public void OnGet()
         {
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HighSchoolApp.DAL
 {
-    internal class Exam
+    public class Exam
     {
         public int ExamId { get; set; }
         public int StudentId { get; set; }

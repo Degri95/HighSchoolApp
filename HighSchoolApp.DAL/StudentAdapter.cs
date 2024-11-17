@@ -8,7 +8,7 @@ namespace HighSchoolApp.DAL
 {
     internal class StudentAdapter
     {
-        private string CONN_STRING = @"Data Source=C:\Sqlite\School.db;Version=3;";
+        private string CONN_STRING = @"Data Source=C:\Sqlite\School.db;";
 
     }
 }

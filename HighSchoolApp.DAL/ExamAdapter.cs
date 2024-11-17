@@ -8,9 +8,9 @@ using Dapper;
 
 namespace HighSchoolApp.DAL
 {
-    internal class ExamAdapter
+    public class ExamAdapter : IExamAdapter
     {
-        private string CONN_STRING = @"Data Source=C:\Sqlite\School.db;Version=3;";
+        private string CONN_STRING = @"Data Source=C:\Sqlite\School.db;";
 
         public IEnumerable<Exam> GetAllExams()
         {
@@ -29,6 +29,16 @@ namespace HighSchoolApp.DAL
             using (SqliteConnection connection = new SqliteConnection(CONN_STRING))
             {
                 return connection.QueryFirst<Exam>(sql, new { ExamId = examId });
+            }
+        }
+
+        public IEnumerable<Exam> GetExamsByStudentId(int studentId)
+        {
+            string sql = @"SELECT * FROM Exam WHERE StudentId = @StudentId";
+
+            using (SqliteConnection connection = new SqliteConnection(CONN_STRING))
+            {
+                return connection.Query<Exam>(sql, new { StudentId = studentId });
             }
         }
 

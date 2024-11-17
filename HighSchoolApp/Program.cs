@@ -1,3 +1,5 @@
+using HighSchoolApp.DAL;
+
 namespace HighSchoolApp
 {
     public class Program
@@ -8,6 +10,9 @@ namespace HighSchoolApp
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            // Add deendency injection
+            builder.Services.AddTransient<IExamAdapter, ExamAdapter>();
 
             var app = builder.Build();
 
