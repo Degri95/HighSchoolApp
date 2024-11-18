@@ -16,6 +16,12 @@
         <th>
             Score
         </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
     </tr>
     @foreach (DAL.Exam exam in Model.Exams)
     {
@@ -30,10 +36,10 @@
                 @exam.Score
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="exam.ExamId">Edit</a>
+                <a asp-page="./Edit" asp-route-id="@exam.ExamId">Edit</a>
             </td>
             <td>
-                <a asp-page="./Delete" asp-route-id="exam.ExamId">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@exam.ExamId">Delete</a>
             </td>
         </tr>
     }

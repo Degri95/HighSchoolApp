@@ -11,8 +11,9 @@ namespace HighSchoolApp
             // Add services to the container.
             builder.Services.AddRazorPages();
 
-            // Add deendency injection
+            // Add dependency injection
             builder.Services.AddTransient<IExamAdapter, ExamAdapter>();
+            builder.Services.AddTransient<IStudentAdapter, StudentAdapter>();
 
             var app = builder.Build();
 
