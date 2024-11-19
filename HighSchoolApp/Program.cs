@@ -14,6 +14,7 @@ namespace HighSchoolApp
             // Add dependency injection
             builder.Services.AddTransient<IExamAdapter, ExamAdapter>();
             builder.Services.AddTransient<IStudentAdapter, StudentAdapter>();
+            builder.Services.AddTransient<ITeacherAdapter, TeacherAdapter>();
 
             var app = builder.Build();
 

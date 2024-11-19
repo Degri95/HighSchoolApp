@@ -7,14 +7,13 @@ namespace HighSchoolApp.Pages.Student
     public class DeleteModel : PageModel
     {
         private IStudentAdapter _studentAdapter;
-
         public DeleteModel(IStudentAdapter studentAdapter)
         {
             _studentAdapter = studentAdapter;
         }
-
         public int Id { get; set; }
         public bool IsSuccess { get; set; }
+
         public void OnGet(int id = 0)
         {
             Id = id;

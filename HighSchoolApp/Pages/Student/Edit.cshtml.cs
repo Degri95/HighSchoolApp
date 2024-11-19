@@ -9,7 +9,6 @@ namespace HighSchoolApp.Pages.Student
     public class EditModel : PageModel
     {
         private IStudentAdapter _studentAdapter;
-
         [BindProperty]
         public int StudentId { get; set; }
         [BindProperty]
@@ -23,17 +22,16 @@ namespace HighSchoolApp.Pages.Student
         [StringLength(50, MinimumLength = 2)]
         public string LastName { get; set; }
         public bool IsSuccess { get; set; }
-
-
         public EditModel(IStudentAdapter studentAdapter)
         {
             _studentAdapter = studentAdapter;
         }
+
         public void OnGet(int id = 0)
         {
             if (id > 0)
             {
-                var student = _studentAdapter.GetStudentById(id);
+                DAL.Student student = _studentAdapter.GetStudentById(id);
                 if (student != null)
                 {
                     StudentId = student.StudentId;
