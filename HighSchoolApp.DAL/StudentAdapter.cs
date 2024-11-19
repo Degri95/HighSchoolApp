@@ -52,7 +52,7 @@ namespace HighSchoolApp.DAL
 
         public bool UpdateStudent(Student student)
         {
-            string sql = @"UPDATE student SET FirstName = @FirstName, LastName = @LastName, WHERE StudentId = @StudentId";
+            string sql = @"UPDATE student SET FirstName = @FirstName, LastName = @LastName WHERE StudentId = @StudentId";
 
             using (SqliteConnection connection = new SqliteConnection(CONN_STRING))
             {
