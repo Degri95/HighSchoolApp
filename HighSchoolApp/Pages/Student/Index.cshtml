@@ -17,6 +17,9 @@
             Last Name
         </th>
         <th>
+            View Exams
+        </th>
+        <th>
             Edit
         </th>
         <th>
@@ -34,6 +37,9 @@
             </td>
             <td>
                 @student.LastName
+            </td>
+            <td>
+                <a asp-page="/Exam/Index" asp-route-id="@student.StudentId">View Exams</a>
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@student.StudentId">Edit</a>

@@ -1,4 +1,26 @@
 ﻿@page
 @model HighSchoolApp.Pages.Exam.EditModel
-@{
+@if (Model.IsSuccess)
+{
+    <p>
+        Exam for student @Model.StudentId created / updated successfully.
+    </p>
+}
+else
+{
+    <form method="post">
+        
+        <div class="mb-3">
+            <label asp-for="StudentId"></label> 
+            <select asp-for="StudentId" class="form-select" asp-items="Model.StudentOptions">Select a student</select> 
+            
+        </div>
+        <div class="mb-3">
+            <label asp-for="Score"></label>
+            <input asp-for="Score" class="form-control" type="number" step="1" /> 
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="ExamId" />
+        <button type="submit">Save</button>
+    </form>
 }
