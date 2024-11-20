@@ -1,4 +1,14 @@
 ﻿@page
 @model HighSchoolApp.Pages.Exam.DeleteModel
-@{
+@if (Model.IsSuccess)
+{
+    <p>
+        Successfully deleted id @Model.Id
+    </p>
+}
+else
+{
+    <p>
+        Failed to delete id @Model.Id
+    </p>
 }
