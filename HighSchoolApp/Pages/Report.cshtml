@@ -1,0 +1,24 @@
+﻿@page
+@model HighSchoolApp.Pages.ReportModel
+<h4>Letter Grade Report</h4>
+<table cellpadding="5" class="table table-striped" >
+    <tr>
+        <th scope="col">
+            Grade
+        </th>
+        <th scope="col">
+            Count
+        </th>
+    </tr>
+    @foreach (var grade in Model.GradeCount)
+    {
+        <tr>
+            <td>
+                @grade.Key
+            </td>
+            <td>
+                @grade.Value
+            </td>
+        </tr>
+    }
+</table>
